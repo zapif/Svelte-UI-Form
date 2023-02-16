@@ -23,21 +23,21 @@
     text = "";
     check = false;
     startDate = new Date().toISOString().split("T")[0];
-    // try {
-    //   const options = {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(json),
-    //   };
-    //   const conn = await fetch("/api/create/", options);
-    //   const resp = await conn.json();
-    //   console.log(resp);
-    //   if (resp.status === 200) {
-    //     console.log("success");
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    try {
+      const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(json),
+      };
+      const conn = await fetch("/api/create/", options);
+      const resp = await conn.json();
+      console.log(resp);
+      if (resp.status === 200) {
+        console.log("success");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
 </script>
 

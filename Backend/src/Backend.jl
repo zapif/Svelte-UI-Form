@@ -8,10 +8,11 @@ struct Request
 end
 JSON3.StructType(::Type{Request}) = JSON3.Struct()
 
+
 function create(req::HTTP.Request)
     input = JSON3.read(IOBuffer(HTTP.payload(req)), Request)
     println(input)
-    return HTTP.Response(200)
+    return HTTP.Response(200, JSON3.write(input))
 end
 
 
